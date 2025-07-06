@@ -22,14 +22,11 @@ A Centralidade de Grau é a métrica mais simples e direta, medindo o número de
 - **Definição:** Representa a quantidade de arestas (conexões) incidentes em um nó.  
 - **Como é calculada:** Para um nó \( v \), a centralidade de grau \( C_D(v) \) é simplesmente o número de seus vizinhos.  
 - **Fórmula (para grafos não direcionados):**  
-  \[
-  C_D(v) = \deg(v)
-  \]  
+  ![Degree1](img/degree1.png)
+  
   Onde \( \deg(v) \) é o número de arestas conectadas ao nó \( v \).  
 - **Fórmula Normalizada:** Para comparar a centralidade de grau entre grafos de tamanhos diferentes, pode-se normalizar a métrica dividindo o grau do nó pelo número máximo possível de conexões (\( N - 1 \), onde \( N \) é o número total de nós no grafo).  
-  \[
-  C'_D(v) = \frac{\deg(v)}{N - 1}
-  \]
+  ![Degree2](img/degree2.png)
 
 ---
 
@@ -40,14 +37,10 @@ A Centralidade de Proximidade mede quão "próximo" um nó está de todos os out
 - **Definição:** É o inverso da soma das distâncias dos caminhos mais curtos de um nó para todos os outros nós no grafo.  
 - **Como é calculada:** Calcula-se a distância do caminho mais curto de um nó para cada outro nó no grafo e, em seguida, soma-se essas distâncias. A centralidade de proximidade é o inverso dessa soma.  
 - **Fórmula (para grafos conectados):**  
-  \[
-  C_C(v) = \frac{1}{\sum_{u \neq v} d(v, u)}
-  \]  
+  ![closeness1](img/closeness1.png)  
   Onde \( d(v, u) \) é o comprimento do caminho mais curto entre os nós \( v \) e \( u \).  
 - **Fórmula Normalizada:**  
-  \[
-  C'_C(v) = \frac{N - 1}{\sum_{u \neq v} d(v, u)}
-  \]
+  ![closeness2](img/closeness2.png)
 
 ---
 
@@ -58,16 +51,12 @@ A Centralidade de Intermediação quantifica a frequência com que um nó atua c
 - **Definição:** Representa a proporção de caminhos mais curtos entre quaisquer dois outros nós que passam por um determinado nó.  
 - **Como é calculada:** Para cada par de nós no grafo, identifica-se todos os caminhos mais curtos entre eles. Em seguida, conta-se quantos desses caminhos passam pelo nó em questão.  
 - **Fórmula:**  
-  \[
-  C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}
-  \]  
+  ![bet1](img/bet1.png) 
   Onde:  
   - \( \sigma_{st} \) é o número total de caminhos mais curtos entre o nó \( s \) e o nó \( t \).  
   - \( \sigma_{st}(v) \) é o número de caminhos mais curtos entre \( s \) e \( t \) que passam pelo nó \( v \).  
 - **Fórmula Normalizada:**  
-  \[
-  C'_B(v) = \frac{C_B(v)}{ \frac{(N - 1)(N - 2)}{2} }
-  \]  
+  ![bet2](img/bet2.png)  
   (para grafos não direcionados)
 
 ---
@@ -79,9 +68,7 @@ A Centralidade de Autovetor mede a influência de um nó com base na influência
 - **Definição:** Um nó é importante se ele está conectado a outros nós importantes. É uma medida da influência de um nó em uma rede.  
 - **Como é calculada:** É determinada iterativamente, onde a pontuação de centralidade de um nó é proporcional à soma das pontuações de centralidade de seus vizinhos. Isso geralmente envolve o cálculo do autovetor principal da matriz de adjacência do grafo.  
 - **Fórmula:**  
-  \[
-  C_E(v) = \frac{1}{\lambda} \sum_{u \in N(v)} C_E(u)
-  \]  
+  ![eigen](img/eigen.png)  
   Onde:  
   - \( N(v) \) é o conjunto de vizinhos do nó \( v \).  
   - \( \lambda \) é o maior autovalor (autovalor principal) da matriz de adjacência do grafo.  
