@@ -21,10 +21,14 @@ A Centralidade de Grau é a métrica mais simples e direta, medindo o número de
 * **Definição:** Representa a quantidade de arestas (conexões) incidentes em um nó.
 * **Como é calculada:** Para um nó `v`, a centralidade de grau `C_D(v)` é simplesmente o número de seus vizinhos.
 * **Fórmula (para grafos não direcionados):**
-    $C_D(v) = deg(v)$
+    ```math
+    C_D(v) = \text{deg}(v)
+    ```
     Onde $deg(v)$ é o número de arestas conectadas ao nó $v$.
 * **Fórmula Normalizada:** Para comparar a centralidade de grau entre grafos de tamanhos diferentes, pode-se normalizar a métrica dividindo o grau do nó pelo número máximo possível de conexões ($N-1$, onde $N$ é o número total de nós no grafo).
-    $C'_D(v) = deg(v) / (N - 1)$
+    ```math
+    C'_D(v) = \frac{\text{deg}(v)}{N - 1}
+    ```
 
 ##### 2. Closeness Centrality (Centralidade de Proximidade)
 A Centralidade de Proximidade mede quão "próximo" um nó está de todos os outros nós no grafo. Nós com alta centralidade de proximidade podem disseminar informações rapidamente para toda a rede, pois têm curtos caminhos para todos os outros nós.
@@ -32,10 +36,14 @@ A Centralidade de Proximidade mede quão "próximo" um nó está de todos os out
 * **Definição:** É o inverso da soma das distâncias dos caminhos mais curtos de um nó para todos os outros nós no grafo.
 * **Como é calculada:** Calcula-se a distância do caminho mais curto de um nó para cada outro nó no grafo e, em seguida, soma-se essas distâncias. A centralidade de proximidade é o inverso dessa soma.
 * **Fórmula (para grafos conectados):**
-    $C_C(v) = 1 / \Sigma_{u\neq v} d(v, u)$
+    ```math
+    C_C(v) = \frac{1}{\sum_{u \neq v} d(v, u)}
+    ```
     Onde $d(v, u)$ é o comprimento do caminho mais curto entre os nós $v$ e $u$.
 * **Fórmula Normalizada:**
-    $C'_C(v) = (N - 1) / \Sigma_{u\neq v} d(v, u)$
+    ```math
+    C'_C(v) = \frac{N - 1}{\sum_{u \neq v} d(v, u)}
+    ```
 
 ##### 3. Betweenness Centrality (Centralidade de Intermediação)
 A Centralidade de Intermediação quantifica a frequência com que um nó atua como uma "ponte" ou intermediário nos caminhos mais curtos entre outros pares de nós na rede. Nós com alta intermediação são cruciais para o fluxo de informação e controle da rede.
@@ -43,12 +51,16 @@ A Centralidade de Intermediação quantifica a frequência com que um nó atua c
 * **Definição:** Representa a proporção de caminhos mais curtos entre quaisquer dois outros nós que passam por um determinado nó.
 * **Como é calculada:** Para cada par de nós no grafo, identifica-se todos os caminhos mais curtos entre eles. Em seguida, conta-se quantos desses caminhos passam pelo nó em questão.
 * **Fórmula:**
-    $C_B(v) = \Sigma_{s\neq v \neq t} (\sigma_{st}(v) / \sigma_{st})$
+    ```math
+    C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}
+    ```
     Onde:
     * $\sigma_{st}$ é o número total de caminhos mais curtos entre o nó $s$ e o nó $t$.
     * $\sigma_{st}(v)$ é o número de caminhos mais curtos entre $s$ e $t$ que passam pelo nó $v$.
 * **Fórmula Normalizada:**
-    $C'_B(v) = C_B(v) / (((N-1)(N-2))/2)$ (para grafos não direcionados)
+    ```math
+    C'_B(v) = \frac{C_B(v)}{\frac{(N-1)(N-2)}{2}}
+    ```
 
 ##### 4. Eigenvector Centrality (Centralidade de Autovetor)
 A Centralidade de Autovetor mede a influência de um nó com base na influência de seus vizinhos. Em vez de apenas contar o número de conexões, ela atribui pontuações mais altas a nós que estão conectados a outros nós que também são altamente conectados e influentes.
@@ -56,21 +68,23 @@ A Centralidade de Autovetor mede a influência de um nó com base na influência
 * **Definição:** Um nó é importante se ele está conectado a outros nós importantes. É uma medida da influência de um nó em uma rede.
 * **Como é calculada:** É determinada iterativamente, onde a pontuação de centralidade de um nó é proporcional à soma das pontuações de centralidade de seus vizinhos. Isso geralmente envolve o cálculo do autovetor principal da matriz de adjacência do grafo.
 * **Fórmula:**
-    $C_E(v) = (1/\lambda) \Sigma_{u\in N(v)} C_E(u)$
+    ```math
+    C_E(v) = \frac{1}{\lambda} \sum_{u \in N(v)} C_E(u)
+    ```
     Onde:
     * $N(v)$ é o conjunto de vizinhos do nó $v$.
     * $\lambda$ é o maior autovalor (autovalor principal) da matriz de adjacência do grafo.
     * $C_E(u)$ é a centralidade de autovetor do nó $u$.
     Na prática, é frequentemente calculada usando algoritmos iterativos ou a decomposição de autovalores da matriz de adjacência.
 
-### Requisito 2
+### Requisito #02
 O segundo requisito tem o objetivo de destacar o k-core e k-shell da rede, uma métrica importante para determinar o “núcleo” mais importante, conectado e influente, saber quais elementos são mais resilientes a falhas ou entender os superespalhadores em uma rede de contatos, em diferentes aplicações.
 
 O k-shell representa o conjunto de nós que pertencem ao k-core, mas não ao k+1-core, como uma “casca” que envolve o núcleo mais conectado. Dessa forma, cada camada removida com número de nós menor que k é o k-shell daquela etapa k.
 
 O k-core de um grafo é o subgrafo máximo no qual todos os nós têm grau maior ou igual a k. Isso significa que você inclui o maior conjunto possível de nós que satisfaça a condição. Essa operação é chamada de decomposição e começa com a remoção de todos os nós com grau menor que k, atualizando os graus restantes até que só restem apenas nós com grau maior ou igual a k no subgrafo.
 
-### Requisito 3
+### Requisito #03
 O terceiro requisito consiste em gerar uma rede exportada no formato HTML através de um plugin disponível no próprio Gephi, organizada com cores diferentes relacionadas ao critério de comunidade. Para isso, a métrica de modularidade foi usada para separar os nós em comunidades e posteriormente colorir cada uma.
 
 Em grafos, uma comunidade representa um grupo de nós densamente conectados entre si, como por exemplo, grupos de família ou colegas de trabalho em uma rede social, refletindo estruturas latentes dentro do grafo.
