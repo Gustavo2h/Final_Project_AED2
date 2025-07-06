@@ -4,9 +4,9 @@
 [Link para a apresentação](LINK)
 
 ## Integrantes do Grupo
-- Gustavo  
-- André  
-- Celine  
+- Gustavo Pereira de Carvalho
+- André Luiz Lima Souza
+- Celine Helena Abrantes de Andrade
 
 ## Contextualização
 > Explicar o que deveria ser feito no trabalho.
