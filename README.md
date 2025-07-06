@@ -25,14 +25,14 @@ A centralidade de proximidade mede o quão próximo um nó está de todos os out
 
 Por fim, a centralidade de autovetor considera, além do número de conexões, a importância dos vizinhos de um nó. Por exemplo, um nó com alta centralidade está ligado a outros com alta importância, representando sua importância estrutural, como uma celebridade que se conecta a outras pessoas igualmente famosas, mas é seguida por milhares de pessoas comuns.
 
-### Requisito #02
+### Requisito #02: K-core
 O segundo requisito tem o objetivo de destacar o k-core e k-shell da rede, uma métrica importante para determinar o “núcleo” mais importante, conectado e influente, saber quais elementos são mais resilientes a falhas ou entender os superespalhadores em uma rede de contatos, em diferentes aplicações.
 
 O k-shell representa o conjunto de nós que pertencem ao k-core, mas não ao k+1-core, como uma “casca” que envolve o núcleo mais conectado. Dessa forma, cada camada removida com número de nós menor que k é o k-shell daquela etapa k.
 
 O k-core de um grafo é o subgrafo máximo no qual todos os nós têm grau maior ou igual a k. Isso significa que você inclui o maior conjunto possível de nós que satisfaça a condição. Essa operação é chamada de decomposição e começa com a remoção de todos os nós com grau menor que k, atualizando os graus restantes até que só restem apenas nós com grau maior ou igual a k no subgrafo.
 
-### Requisito #03
+### Requisito #03: Página HTML interativa
 O terceiro requisito consiste em gerar uma rede exportada no formato HTML através de um plugin disponível no próprio Gephi, organizada com cores diferentes relacionadas ao critério de comunidade. Para isso, a métrica de modularidade foi usada para separar os nós em comunidades e posteriormente colorir cada uma.
 
 Em grafos, uma comunidade representa um grupo de nós densamente conectados entre si, como por exemplo, grupos de família ou colegas de trabalho em uma rede social, refletindo estruturas latentes dentro do grafo.
