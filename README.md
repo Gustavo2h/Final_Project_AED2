@@ -15,66 +15,15 @@ Este projeto tem como objetivo principal aplicar conceitos de Grafos e Análise 
 
 ### Requisito #01: Análise de Centralidades
 
-#### 1. Degree Centrality (Centralidade de Grau)
+No primeiro requisito, foram gerados quatro grafos diferentes expondo diferentes tipos de centralidade: a centralidade de grau (Degree Centrality), centralidade de proximidade (Closeness Centrality), centralidade de intermediação (Betweenness Centrality) e centralidade de autovetor (Eigenvector Centrality).
 
-A Centralidade de Grau é a métrica mais simples e direta, medindo o número de conexões diretas que um nó possui. Um nó com alto grau é considerado um "hub" na rede, pois está diretamente conectado a muitos outros nós.
+A centralidade de grau representa o número de conexões que um vértice possui. Um nó com alto grau é diretamente conectado a muitos outros, sugerindo uma alta influência e visibilidade.
 
-- **Definição:** Representa a quantidade de arestas (conexões) incidentes em um nó.  
-- **Como é calculada:** Para um nó \( v \), a centralidade de grau \( C_D(v) \) é simplesmente o número de seus vizinhos.  
-- **Fórmula (para grafos não direcionados):**  
-  ![Degree1](img/degree1.png)
-  
-  Onde \( \deg(v) \) é o número de arestas conectadas ao nó \( v \).  
-- **Fórmula Normalizada:** Para comparar a centralidade de grau entre grafos de tamanhos diferentes, pode-se normalizar a métrica dividindo o grau do nó pelo número máximo possível de conexões (\( N - 1 \), onde \( N \) é o número total de nós no grafo).  
-  ![Degree2](img/degree2.png)
+A centralidade de intermediação representa o quanto um nó está no caminho mais curto até outros pares de nós. Um nó com betweenness alto atua como ponte ou nó intermediário entre outros nós, podendo controlar o fluxo na rede, sendo importante para ligar comunidades ou regiões separadas do grafo.
 
----
+A centralidade de proximidade mede o quão próximo um nó está de todos os outros na rede, baseado no menor caminho. Um nó com closeness alto pode alcançar outros nós rapidamente, indicando sua importância para difundir informação pela rede.
 
-#### 2. Closeness Centrality (Centralidade de Proximidade)
-
-A Centralidade de Proximidade mede quão "próximo" um nó está de todos os outros nós no grafo. Nós com alta centralidade de proximidade podem disseminar informações rapidamente para toda a rede, pois têm curtos caminhos para todos os outros nós.
-
-- **Definição:** É o inverso da soma das distâncias dos caminhos mais curtos de um nó para todos os outros nós no grafo.  
-- **Como é calculada:** Calcula-se a distância do caminho mais curto de um nó para cada outro nó no grafo e, em seguida, soma-se essas distâncias. A centralidade de proximidade é o inverso dessa soma.  
-- **Fórmula (para grafos conectados):**  
-  ![closeness1](img/closeness1.png)  
-  Onde \( d(v, u) \) é o comprimento do caminho mais curto entre os nós \( v \) e \( u \).  
-- **Fórmula Normalizada:**  
-  ![closeness2](img/closeness2.png)
-
----
-
-#### 3. Betweenness Centrality (Centralidade de Intermediação)
-
-A Centralidade de Intermediação quantifica a frequência com que um nó atua como uma "ponte" ou intermediário nos caminhos mais curtos entre outros pares de nós na rede. Nós com alta intermediação são cruciais para o fluxo de informação e controle da rede.
-
-- **Definição:** Representa a proporção de caminhos mais curtos entre quaisquer dois outros nós que passam por um determinado nó.  
-- **Como é calculada:** Para cada par de nós no grafo, identifica-se todos os caminhos mais curtos entre eles. Em seguida, conta-se quantos desses caminhos passam pelo nó em questão.  
-- **Fórmula:**  
-  ![bet1](img/bet1.png) 
-  Onde:  
-  - \( \sigma_{st} \) é o número total de caminhos mais curtos entre o nó \( s \) e o nó \( t \).  
-  - \( \sigma_{st}(v) \) é o número de caminhos mais curtos entre \( s \) e \( t \) que passam pelo nó \( v \).  
-- **Fórmula Normalizada:**  
-  ![bet2](img/bet2.png)  
-  (para grafos não direcionados)
-
----
-
-#### 4. Eigenvector Centrality (Centralidade de Autovetor)
-
-A Centralidade de Autovetor mede a influência de um nó com base na influência de seus vizinhos. Em vez de apenas contar o número de conexões, ela atribui pontuações mais altas a nós que estão conectados a outros nós que também são altamente conectados e influentes.
-
-- **Definição:** Um nó é importante se ele está conectado a outros nós importantes. É uma medida da influência de um nó em uma rede.  
-- **Como é calculada:** É determinada iterativamente, onde a pontuação de centralidade de um nó é proporcional à soma das pontuações de centralidade de seus vizinhos. Isso geralmente envolve o cálculo do autovetor principal da matriz de adjacência do grafo.  
-- **Fórmula:**  
-  ![eigen](img/eigen.png)  
-  Onde:  
-  - \( N(v) \) é o conjunto de vizinhos do nó \( v \).  
-  - \( \lambda \) é o maior autovalor (autovalor principal) da matriz de adjacência do grafo.  
-  - \( C_E(u) \) é a centralidade de autovetor do nó \( u \).  
-
-  Na prática, essa centralidade é frequentemente calculada usando algoritmos iterativos ou por decomposição de autovalores da matriz de adjacência.
+Por fim, a centralidade de autovetor considera, além do número de conexões, a importância dos vizinhos de um nó. Por exemplo, um nó com alta centralidade está ligado a outros com alta importância, representando sua importância estrutural, como uma celebridade que se conecta a outras pessoas igualmente famosas, mas é seguida por milhares de pessoas comuns.
 
 ### Requisito #02
 O segundo requisito tem o objetivo de destacar o k-core e k-shell da rede, uma métrica importante para determinar o “núcleo” mais importante, conectado e influente, saber quais elementos são mais resilientes a falhas ou entender os superespalhadores em uma rede de contatos, em diferentes aplicações.
