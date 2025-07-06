@@ -78,10 +78,10 @@ Em grafos, uma comunidade representa um grupo de nós densamente conectados entr
 Além disso, modularidade é uma métrica que quantifica a qualidade da divisão da rede em comunidades, comparando a densidade de arestas dentro das comunidades com a densidade esperada caso as arestas fossem distribuídas aleatoriamente. Dessa forma, a rede é comparada com uma aleatória com mesmo grau médio. Valores altos de modularidade indicam que há mais arestas dentro das comunidades do que o esperado.
 
 ## Metodologia
-A rede utilizada foi gerada através de um notebook Jupyter disponibilizado no repositório da disciplina (src/Final_Project.ipynb) e dois arquivos contendo informações sobre os nós e arestas da rede (src/GraphTest_nodes.txt e src/GraphTest_edges.txt). Após a execução, o programa gerou a rede utilizada no trabalho (src/final_network.gexf), cujo processamento foi feito utilizando a ferramenta Gephi, um software open-source para processamento e visualização de grafos, gerando as figuras e gráficos solicitados no trabalho.
+A rede utilizada foi gerada através de um notebook Jupyter disponibilizado no repositório da disciplina **[código](src/Final_Project.ipynb)** e dois arquivos contendo informações sobre os nós e arestas da rede **[nodes](src/GraphTest_nodes.txt)** e **[edges](src/GraphTest_edges.txt)**. Após a execução, o programa gerou a rede utilizada no trabalho **[network](src/final_network.gexf)**, cujo processamento foi feito utilizando a ferramenta Gephi, um software open-source para processamento e visualização de grafos, gerando as figuras e gráficos solicitados no trabalho.
 
 ## Organização do Repositório
-O repositório contém todos os arquivos e códigos utilizados, além de todas as figuras geradas e o código-fonte da página necessária no requisito 3. Os códigos e arquivos utilizados para gerar a rede se encontram na pasta src/, enquanto as imagens geradas estão na pasta img/. Na pasta docs/ estão os arquivos exportados pelo Gephi para criação da página HTML.
+O repositório contém todos os arquivos e códigos utilizados, além de todas as figuras geradas e o código-fonte da página necessária no requisito 3. Os códigos e arquivos utilizados para gerar a rede se encontram na pasta **[src](src/)**, enquanto as imagens geradas estão na pasta **[img](img/)**. Na pasta **[docs](docs/)** estão os arquivos exportados pelo Gephi para criação da página HTML.
 
 ## Resultados
 
@@ -118,6 +118,13 @@ Por fim, o grafo de Eigenvector Centrality ilustra a influência de um nó na re
 </div>
 
 ### Requisito #02: K-core e K-shell
+
+O gráfico gerado representa a estrutura da rede em termos de k-core e k-shell, sendo o k-core a região central mais conectada e o k-shell, as camadas periféricas.
+Os nós vermelhos fazem parte do 3-core, ou seja, pertencem a um subgrafo onde todos os nós têm pelo menos 3 conexões dentro do próprio núcleo, sendo assim um centro mais coeso e resiliente.
+Ao mesmo tempo, os nós azuis representam o 2-shell, ou seja, pertencem ao 2-core, mas não ao 3-core, sendo uma casca intermediária da rede, conectados de forma menos densa.
+Por fim, os nós pretos foram removidos nas etapas anteriores da decomposição e representam a periferia da rede.
+Essa análise nos permite identificar os nós mais relevantes e mais importantes estruturalmente.
+
 <div align="center">
 <img src="img/Kcore.png" alt="Gráfico 5 - K-core" width="600">
 <p><strong>Figura 5:</strong> K-core e K-shell.</p>
@@ -125,6 +132,12 @@ Por fim, o grafo de Eigenvector Centrality ilustra a influência de um nó na re
 
 
 ### Requisito #03: Página HTML Interativa
+
+A figura a seguir ilustra a página HTML exportada pelo Gephi, com suporte à navegação, busca e filtros. A rede foi colorida com base nas comunidades detectadas utilizando a métrica de modularidade.
+Cada cor representa uma comunidade detectada, e os nós são agrupados com base na densidade das conexões internas.
+
+A rede possui múltiplas comunidades distintas, como pode ser visto pela diversidade de cores. Além disso, a divisão em cores compactas indica uma separação coesa entre os grupos, sugerindo que a rede não é homogênea, mas sim composta por subestruturas bem definidas.
+
 <div align="center">
 <img src="img/page.png" alt="Gráfico 6 - HTML page" width="600">
 <p><strong>Figura 6:</strong> Página HTML.</p>
