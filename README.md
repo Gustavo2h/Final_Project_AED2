@@ -64,17 +64,24 @@ A Centralidade de Autovetor mede a influência de um nó com base na influência
     Na prática, é frequentemente calculada usando algoritmos iterativos ou a decomposição de autovalores da matriz de adjacência.
 
 ### Requisito 2
-- Explicação da(s) métrica(s) utilizada(s).
+O segundo requisito tem o objetivo de destacar o k-core e k-shell da rede, uma métrica importante para determinar o “núcleo” mais importante, conectado e influente, saber quais elementos são mais resilientes a falhas ou entender os superespalhadores em uma rede de contatos, em diferentes aplicações.
+
+O k-shell representa o conjunto de nós que pertencem ao k-core, mas não ao k+1-core, como uma “casca” que envolve o núcleo mais conectado. Dessa forma, cada camada removida com número de nós menor que k é o k-shell daquela etapa k.
+
+O k-core de um grafo é o subgrafo máximo no qual todos os nós têm grau maior ou igual a k. Isso significa que você inclui o maior conjunto possível de nós que satisfaça a condição. Essa operação é chamada de decomposição e começa com a remoção de todos os nós com grau menor que k, atualizando os graus restantes até que só restem apenas nós com grau maior ou igual a k no subgrafo.
 
 ### Requisito 3
-- Explicação da(s) métrica(s) utilizada(s).
+O terceiro requisito consiste em gerar uma rede exportada no formato HTML através de um plugin disponível no próprio Gephi, organizada com cores diferentes relacionadas ao critério de comunidade. Para isso, a métrica de modularidade foi usada para separar os nós em comunidades e posteriormente colorir cada uma.
+
+Em grafos, uma comunidade representa um grupo de nós densamente conectados entre si, como por exemplo, grupos de família ou colegas de trabalho em uma rede social, refletindo estruturas latentes dentro do grafo.
+
+Além disso, modularidade é uma métrica que quantifica a qualidade da divisão da rede em comunidades, comparando a densidade de arestas dentro das comunidades com a densidade esperada caso as arestas fossem distribuídas aleatoriamente. Dessa forma, a rede é comparada com uma aleatória com mesmo grau médio. Valores altos de modularidade indicam que há mais arestas dentro das comunidades do que o esperado.
 
 ## Metodologia
-- Código utilizado  
-- Dados utilizados  
+A rede utilizada foi gerada através de um notebook Jupyter disponibilizado no repositório da disciplina (src/Final_Project.ipynb) e dois arquivos contendo informações sobre os nós e arestas da rede (src/GraphTest_nodes.txt e src/GraphTest_edges.txt). Após a execução, o programa gerou a rede utilizada no trabalho (src/final_network.gexf), cujo processamento foi feito utilizando a ferramenta Gephi, um software open-source para processamento e visualização de grafos, gerando as figuras e gráficos solicitados no trabalho.
 
 ## Organização do Repositório
-> Descrever a estrutura de pastas e arquivos.
+O repositório contém todos os arquivos e códigos utilizados, além de todas as figuras geradas e o código-fonte da página necessária no requisito 3. Os códigos e arquivos utilizados para gerar a rede se encontram na pasta src/, enquanto as imagens geradas estão na pasta img/. Na pasta docs/ estão os arquivos exportados pelo Gephi para criação da página HTML.
 
 ## Resultados
 
