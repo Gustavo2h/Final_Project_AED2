@@ -34,66 +34,48 @@
 ### Requisito 1
 - Imagem:
   <div align="center">
-    <figure>
-      <img src="img/DegreeCentrality.png" alt="Gráfico 1 - Degree Centrality" width="600"/>
-      <figcaption style="font-size: 16px; font-weight: 500; margin-top: 8px;">
-        <strong>Figura 1:</strong> Degree Centrality.
-      </figcaption>
-    </figure>
-  </div>
-  
-  <div align="center">
-    <figure>
-      <img src="img/ClosenessCentrality.png" alt="Gráfico 2 - Closeness Centrality" width="600"/>
-      <figcaption style="font-size: 16px; font-weight: 500; margin-top: 8px;">
-        <strong>Figura 1:</strong> Closeness Centrality.
-      </figcaption>
-    </figure>
-  </div>
+<img src="img/DegreeCentrality.png" alt="Gráfico 1 - Degree Centrality" width="600">
+<p><strong>Figura 1:</strong> Degree Centrality.</p>
+</div>
 
-  <div align="center">
-    <figure>
-      <img src="img/BetweennessCentrality.png" alt="Gráfico 3 - Betweenness Centrality" width="600"/>
-      <figcaption style="font-size: 16px; font-weight: 500; margin-top: 8px;">
-        <strong>Figura 1:</strong> Betweenness Centrality.
-      </figcaption>
-    </figure>
-  </div>
+<br>
 
-  <div align="center">
-    <figure>
-      <img src="img/EigenvectorCentrality.png" alt="Gráfico 4 - Eigenvector Centrality" width="600"/>
-      <figcaption style="font-size: 16px; font-weight: 500; margin-top: 8px;">
-        <strong>Figura 1:</strong> Eigenvector Centrality.
-      </figcaption>
-    </figure>
-  </div>
+<div align="center">
+<img src="img/ClosenessCentrality.png" alt="Gráfico 2 - Closeness Centrality" width="600">
+<p><strong>Figura 2:</strong> Closeness Centrality.</p>
+</div>
+
+<br>
+
+<div align="center">
+<img src="img/BetweennessCentrality.png" alt="Gráfico 3 - Betweenness Centrality" width="600">
+<p><strong>Figura 3:</strong> Betweenness Centrality.</p>
+</div>
+
+<br>
+
+<div align="center">
+<img src="img/EigenvectorCentrality.png" alt="Gráfico 4 - Eigenvector Centrality" width="600">
+<p><strong>Figura 4:</strong> Eigenvector Centrality.</p>
+</div>
   
 - Explicação:
 
 ### Requisito 2
 - Imagem:
   <div align="center">
-    <figure>
-      <img src="img/Kcore.png" alt="Gráfico 5 - K-core" width="600"/>
-      <figcaption style="font-size: 16px; font-weight: 500; margin-top: 8px;">
-        <strong>Figura 1:</strong> K-core e K-shell.
-      </figcaption>
-    </figure>
-  </div>
+<img src="img/Kcore.png" alt="Gráfico 5 - K-core" width="600">
+<p><strong>Figura 5:</strong> K-core e K-shell.</p>
+</div>
   
 - Explicação:
 
 ### Requisito 3
 - Imagem:
   <div align="center">
-    <figure>
-      <img src="img/page.png" alt="Gráfico 6 - HTML page" width="600"/>
-      <figcaption style="font-size: 16px; font-weight: 500; margin-top: 8px;">
-        <strong>Figura 1:</strong> Página HTML.
-      </figcaption>
-    </figure>
-  </div>
+<img src="img/page.png" alt="Gráfico 6 - HTML page" width="600">
+<p><strong>Figura 6:</strong> Página HTML.</p>
+</div>
   
 - Explicação:
 - Link para página: [Link](LINK_DA_PAGINA)
