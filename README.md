@@ -33,7 +33,7 @@
 
 ### Requisito 1
 - Imagem:
-  <div align="center">
+<div align="center">
 <img src="img/DegreeCentrality.png" alt="Gráfico 1 - Degree Centrality" width="600">
 <p><strong>Figura 1:</strong> Degree Centrality.</p>
 </div>
@@ -58,12 +58,12 @@
 <img src="img/EigenvectorCentrality.png" alt="Gráfico 4 - Eigenvector Centrality" width="600">
 <p><strong>Figura 4:</strong> Eigenvector Centrality.</p>
 </div>
-  
+
 - Explicação:
 
 ### Requisito 2
 - Imagem:
-  <div align="center">
+<div align="center">
 <img src="img/Kcore.png" alt="Gráfico 5 - K-core" width="600">
 <p><strong>Figura 5:</strong> K-core e K-shell.</p>
 </div>
@@ -72,7 +72,7 @@
 
 ### Requisito 3
 - Imagem:
-  <div align="center">
+<div align="center">
 <img src="img/page.png" alt="Gráfico 6 - HTML page" width="600">
 <p><strong>Figura 6:</strong> Página HTML.</p>
 </div>
