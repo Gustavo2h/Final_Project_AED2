@@ -36,6 +36,7 @@
   <div align="center">
     <figure>
       <img src="img/DegreeCentrality.png" alt="Gráfico 1 - Degree Centrality" width="600"/>
+      
       <figcaption><strong>Figura 1:</strong> Degree Centrality</figcaption>
     </figure>
   </div>
@@ -43,6 +44,7 @@
   <div align="center">
     <figure>
       <img src="img/ClosenessCentrality.png" alt="Gráfico 2 - Closeness Centrality" width="600"/>
+      
       <figcaption><strong>Figura 1:</strong> Closeness Centrality</figcaption>
     </figure>
   </div>
@@ -50,6 +52,7 @@
   <div align="center">
     <figure>
       <img src="img/BetweennessCentrality.png" alt="Gráfico 3 - Betweenness Centrality" width="600"/>
+      
       <figcaption><strong>Figura 1:</strong> Betweenness Centrality</figcaption>
     </figure>
   </div>
@@ -57,6 +60,7 @@
   <div align="center">
     <figure>
       <img src="img/EigenvectorCentrality.png" alt="Gráfico 4 - Eigenvector Centrality" width="600"/>
+      
       <figcaption><strong>Figura 1:</strong> Eigenvector Centrality</figcaption>
     </figure>
   </div>
@@ -68,6 +72,7 @@
   <div align="center">
     <figure>
       <img src="img/Kcore.png" alt="Gráfico 5 - K-core" width="600"/>
+      
       <figcaption><strong>Figura 1:</strong> K-core e K-shell </figcaption>
     </figure>
   </div>
@@ -79,6 +84,7 @@
   <div align="center">
     <figure>
       <img src="img/page.png" alt="Gráfico 6 - HTML page" width="600"/>
+      
       <figcaption><strong>Figura 1:</strong> Página HTML </figcaption>
     </figure>
   </div>
