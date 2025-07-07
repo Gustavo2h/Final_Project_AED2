@@ -1,7 +1,7 @@
 # Projeto Final - AED II (Parte 1)
 
 ## Apresentação
-[Link para a apresentação](LINK_PARA_A_SUA_APRESENTACAO_AQUI)
+[Link para a apresentação](https://youtu.be/faBIywbdO0w)
 
 ## Integrantes do Grupo
 - Gustavo Pereira de Carvalho
